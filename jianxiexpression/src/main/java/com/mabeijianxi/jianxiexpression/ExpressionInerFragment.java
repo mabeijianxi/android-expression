@@ -26,6 +26,7 @@ public class ExpressionInerFragment extends BaseInsideFragment {
         ArrayList<ExpressionGridFragment> expressionGridFragments = new ArrayList<>();
         String[][] pageDate = getmPageDate();
         if (pageDate != null) {
+//            循环添加没类表情，这里暂时是三类，包括最近，默认与emoji
             for (int i = 0; i < pageDate.length; i++) {
                 expressionGridFragments.add(ExpressionGridFragment.newInstance(pageDate[i]));
             }

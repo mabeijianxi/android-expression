@@ -13,6 +13,8 @@ import java.util.regex.Pattern;
 /**
  * Created by jian on 2016/6/24.
  * mabeijianxi@gmail.com
+ *
+ * 这个class算是比较核心的后期会继续优化
  */
 public class ExpressionTransformEngine {
 
@@ -24,7 +26,7 @@ public class ExpressionTransformEngine {
         for (int i = 0; i < oldSpans.length; i++) {
             text.removeSpan(oldSpans[i]);
         }
-
+//            TODO 效率不是很高，等待进一步优化
         String PATTERN = "\\[soon](.*?)\\[/soon]";
         Pattern p = Pattern.compile(PATTERN);
         Matcher m = p.matcher(text);
@@ -37,10 +39,8 @@ public class ExpressionTransformEngine {
                 id = index;
             } else {
                 String afterGroup = beferGroup.replace("[soon]", "").replace("[/soon]", "");
-//            TODO 效率不高，等待进一步优化
-                id = context.getResources()
-                        .getIdentifier(afterGroup, "drawable",
-                                context.getPackageName());
+
+                id = context.getResources().getIdentifier(afterGroup, "drawable", context.getPackageName());
             }
             if (id <= 0) {
                 continue;
@@ -52,10 +52,11 @@ public class ExpressionTransformEngine {
 
     }
 
-    private static int getId2R(int index) {
-        return 0;
-    }
-
+    /**
+     * 每次点击表情会调用，已经处理长按选择多个表情然后再输入表情的情况
+     * @param editText
+     * @param str
+     */
     public static void input(EditText editText, String str) {
 
 
@@ -93,7 +94,7 @@ public class ExpressionTransformEngine {
     }
 
     /**
-     * 后移动一位
+     * 后移动一位,只保留最近的21个
      *
      * @param endIndex
      * @param newStr

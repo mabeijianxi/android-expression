@@ -37,6 +37,10 @@ public abstract class BaseInsideFragment extends Fragment {
         mountData();
     }
 
+    /**
+     * 设置每类表情每页的数据，这里采用二位数组比较方便
+     * @param pageDate
+     */
     public void setPageDate(String[][] pageDate) {
         this.mPageDate = pageDate;
     }
@@ -45,9 +49,13 @@ public abstract class BaseInsideFragment extends Fragment {
         return mPageDate;
     }
 
+    /**
+     * 数据配置
+     */
     private void mountData() {
         data = setupData();
         vp_expression.setAdapter(new ExpressionPagerAdapter(getChildFragmentManager(), data));
+//       是否需要CirclePageIndicator，最近使用页只有一页是不需要的
         if (isNeedCirclePageIndicator()) {
             cp_iner_expression.setVisibility(View.VISIBLE);
             cp_iner_expression.setViewPager(vp_expression);

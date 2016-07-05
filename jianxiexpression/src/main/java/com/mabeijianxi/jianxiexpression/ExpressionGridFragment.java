@@ -41,8 +41,10 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
         } else if (getParentFragment() instanceof ExpressionClickListener) {
             mExpressionClickListener = (ExpressionClickListener) getParentFragment();
         } else {
+//            这里必须实现ExpressionClickListener，不然没法添加表情到输入框
             throw new IllegalArgumentException("需要实现ExpressionClickListener");
         }
+//        获取添加到最近使用的具体实现
         if (getActivity() instanceof ExpressionaddRecentListener) {
             mExpressionaddRecentListener = (ExpressionaddRecentListener) getActivity();
         } else if (getParentFragment().getParentFragment() instanceof ExpressionaddRecentListener) {
@@ -70,18 +72,30 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
         String itemAtPosition = (String) parent.getItemAtPosition(position);
         mExpressionClickListener.expressionClick(itemAtPosition);
         ExpressionTransformEngine.addRecentExpression(itemAtPosition);
-        if(mExpressionaddRecentListener!=null){
+        if (mExpressionaddRecentListener != null) {
             mExpressionaddRecentListener.expressionaddRecent(itemAtPosition);
         }
     }
-    public void notifyData(){
-        if(expressionItemAdapter!=null){
+
+    /**
+     * 列表更新，比如更新最近使用列表。在这里其实也只会更新最近使用列表
+     */
+    public void notifyData() {
+        if (expressionItemAdapter != null) {
             expressionItemAdapter.notifyDataSetChanged();
         }
     }
+
+    /**
+     * 表情点击回调
+     */
     public interface ExpressionClickListener {
         void expressionClick(String str);
     }
+
+    /**
+     * 其实也是表情点击回调，主要是为了添加表情到最近使用
+     */
     public interface ExpressionaddRecentListener {
         void expressionaddRecent(String str);
     }

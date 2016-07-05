@@ -24,11 +24,12 @@ public class ExpressionRecentsFragment extends BaseInsideFragment {
     }
 
     /**
-     * 跟新最近使用表情
+     * 更新最近使用表情
      * @param str
      */
     public void expressionaddRecent(String str) {
         ArrayList<ExpressionGridFragment> data = getData();
+//        其实i暂时永远为0，因为最近使用页限制为了一页，当然可拓展
         for(int i=0;i<data.size();i++){
             data.get(i).notifyData();
         }

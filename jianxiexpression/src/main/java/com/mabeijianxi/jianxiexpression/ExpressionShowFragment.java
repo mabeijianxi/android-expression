@@ -57,11 +57,13 @@ public class ExpressionShowFragment extends Fragment implements ExpressionGridFr
         ArrayList<BaseInsideFragment> expressionInerFragments = new ArrayList<>();
 
         expressionRecentsFragment = new ExpressionRecentsFragment();
-
+//        最近使用
         expressionInerFragments.add(expressionRecentsFragment);
+//        默认
         expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_1, ExpressionCache.page_2, ExpressionCache.page_3}));
+//       emoji
         expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_4, ExpressionCache.page_5, ExpressionCache.page_6,ExpressionCache.page_7}));
-
+//      TODO 自己拓展
         vp_expression.setOffscreenPageLimit(2);
         vp_expression.setAdapter(new ExpressionShowApadater(getChildFragmentManager(), expressionInerFragments));
         psts_expression.setViewPager(vp_expression);

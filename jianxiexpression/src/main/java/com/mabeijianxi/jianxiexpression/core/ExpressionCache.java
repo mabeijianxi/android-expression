@@ -9,7 +9,7 @@ import java.util.HashMap;
  * mabeijianxi@gmail.com
  */
 public class ExpressionCache {
-    //    每页数据资源
+    //    TODO 每页数据资源，可自己定义，自己更改
     public static final String[] page_1 = new String[]{
             "[soon]d_aini[/soon]", "[soon]d_aoteman[/soon]", "[soon]d_baibai[/soon]",
             "[soon]d_beishang[/soon]", "[soon]d_bishi[/soon]", "[soon]d_bizui[/soon]",
@@ -73,7 +73,9 @@ public class ExpressionCache {
             "[soon]emoji_0x270c[/soon]", "[soon]emoji_0x2764[/soon]"
     };
 
-
+    /**
+     * 所有的表情资源id缓存，增加效率
+     */
     private static HashMap<String, Integer> allExpressionTable = new HashMap<String, Integer>();
 
     static {
