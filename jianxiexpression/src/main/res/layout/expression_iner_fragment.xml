@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:jianxi="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<android.support.v4.view.ViewPager
+    android:id="@+id/vp_iner_expression"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+<com.mabeijianxi.jianxiexpression.widget.CirclePageIndicator
+    android:id="@+id/cp_iner_expression"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    jianxi:fillColor="#66000000"
+    jianxi:pageColor="#22000000"
+    jianxi:strokeWidth="0dp"
+    jianxi:radius1="2dp"
+    android:layout_marginBottom="10dp"
+    android:layout_gravity="bottom"
+    />
+</FrameLayout>
