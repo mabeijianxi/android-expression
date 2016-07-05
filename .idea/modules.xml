@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JianXiExpression.iml" filepath="$PROJECT_DIR$/JianXiExpression.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jianxiexpression/app.iml" filepath="$PROJECT_DIR$/jianxiexpression/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-expression.iml" filepath="$PROJECT_DIR$/android-expression.iml" />
       <module fileurl="file://$PROJECT_DIR$/jianxiexpression/jianxiexpression.iml" filepath="$PROJECT_DIR$/jianxiexpression/jianxiexpression.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
