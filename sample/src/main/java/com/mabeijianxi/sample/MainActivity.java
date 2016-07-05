@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * @param rootView
-     * @return
+     * @return b
+     * 判断键盘弹出状态
      */
     private boolean isKeyboardShown(View rootView) {
         final int softKeyboardHeight = 100;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return heightDiff > softKeyboardHeight * dm.density;
     }
 
+    /**
+     * 动态监听键盘状态
+     */
     private void setListenerToRootView() {
         rl_root.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -138,7 +142,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
+    /**
+     * 表情显示
+     */
     private void replaceEmogi() {
         isEmogiShow = true;
         fl_emogi.setVisibility(View.VISIBLE);
@@ -186,6 +192,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * 这里必须实现表情点击后才能把具体表情传入edittext
+     * @param str
+     */
     @Override
     public void expressionClick(String str) {
         ExpressionShowFragment.input(et_send_content, str);
