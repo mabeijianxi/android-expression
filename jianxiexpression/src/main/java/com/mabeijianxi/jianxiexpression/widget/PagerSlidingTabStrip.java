@@ -47,6 +47,12 @@ import java.util.Locale;
 @SuppressLint("NewApi")
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
+	private boolean smoothPage=true;
+
+	public void setSmoothPage(boolean smoothPage) {
+		this.smoothPage = smoothPage;
+	}
+
 	public interface IconTabProvider {
 		public int getPageIconResId(int position);
 	}
@@ -143,7 +149,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 		tabTextSize = a.getDimensionPixelSize(0, tabTextSize);
 		tabTextColor = a.getColor(1, tabTextColor);
-		 selectedTabTextColor = a.getColor(1, selectedTabTextColor);
+		selectedTabTextColor = a.getColor(1, selectedTabTextColor);
 
 		a.recycle();
 
@@ -291,7 +297,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		tab.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				pager.setCurrentItem(position);
+				pager.setCurrentItem(position,smoothPage);
 			}
 		});
 
@@ -327,10 +333,10 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 								.toUpperCase(locale));
 					}
 				}
-				
-				 if (i == selectedPosition) {
-				     tab.setTextColor(selectedTabTextColor);
-				    }
+
+				if (i == selectedPosition) {
+					tab.setTextColor(selectedTabTextColor);
+				}
 			}
 		}
 
@@ -411,7 +417,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 		@Override
 		public void onPageScrolled(int position, float positionOffset,
-				int positionOffsetPixels) {
+								   int positionOffsetPixels) {
 
 			currentPosition = position;
 			currentPositionOffset = positionOffset;
@@ -441,7 +447,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		@Override
 		public void onPageSelected(int position) {
 			selectedPosition = position;
-			   updateTabStyles();
+			updateTabStyles();
 			if (delegatePageListener != null) {
 				delegatePageListener.onPageSelected(position);
 			}
