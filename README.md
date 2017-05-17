@@ -2,7 +2,7 @@
 This is an android custom expressions library,Support expression expand.
 
 ### effect picture
-![expression.gif](http://7xq6db.com1.z0.glb.clouddn.com/expression.gif)
+![expression.gif](https://github.com/mabeijianxi/android-expression/blob/master/expression.gif
 
 ### Usage
     compile 'com.mabeijianxi:jianxiexpression:2.2.4'
