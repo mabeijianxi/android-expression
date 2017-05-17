@@ -5,7 +5,7 @@ This is an android custom expressions library,Support expression expand.
 ![expression.gif](http://7xq6db.com1.z0.glb.clouddn.com/expression.gif)
 
 ### Usage
-    compile 'com.mabeijianxi:jianxiexpression:2.1.2'
+    compile 'com.mabeijianxi:jianxiexpression:2.2.4'
 
 ### theory
 Please wait for update！
