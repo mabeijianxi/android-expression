@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 22
-        versionCode 6
-        versionName "2.2.3"
+        versionCode 7
+        versionName "2.2.4"
     }
     buildTypes {
         release {
@@ -26,7 +26,7 @@ publish {
     userOrg = 'mabeijianxi'
     groupId = 'com.mabeijianxi'
     artifactId = 'jianxiexpression'
-    publishVersion = '2.2.3'
+    publishVersion = '2.2.4'
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

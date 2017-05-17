@@ -18,6 +18,7 @@ package com.mabeijianxi.jianxiexpression.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.DynamicDrawableSpan;
@@ -35,6 +36,7 @@ public class ExpressionTextView extends TextView {
     private int mExpressionSize;
     private int mExpressionAlignment;
     private int mExpressionTextSize;
+    private SpannableString mContent;
 
     public ExpressionTextView(Context context) {
         super(context);
@@ -66,14 +68,19 @@ public class ExpressionTextView extends TextView {
 
     @Override
     public void setText(CharSequence text, BufferType type) {
-        if (!TextUtils.isEmpty(text)) {
+        if (!TextUtils.isEmpty(text) && mContent == null) {
             SpannableStringBuilder builder = new SpannableStringBuilder(text);
             ExpressionTransformEngine.transformExoression(getContext(), builder, mExpressionSize, mExpressionAlignment, mExpressionTextSize);
             text = builder;
+        } else if (mContent != null) {
+            ExpressionTransformEngine.transformExoression(getContext(), mContent, mExpressionSize, mExpressionAlignment, mExpressionTextSize);
+            text=mContent;
         }
         super.setText(text, type);
     }
-
+    public void setSpannableString(SpannableString content) {
+        this.mContent = content;
+    }
     public void setExpressionSize(int pixels) {
         mExpressionSize = pixels;
         super.setText(getText());

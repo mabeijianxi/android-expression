@@ -5,8 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
-import com.mabeijianxi.jianxiexpression.widget.ExpressionTextView;
+import android.widget.TextView;
 
 /**
  * Created by jian on 2016/6/23.
@@ -19,20 +18,16 @@ public class ExpressionItemAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = convertView;
-        if (v == null) {
+        View v;
+        if (position == 20) {
+            v = LayoutInflater.from(getContext()).inflate(R.layout.expression_gv_delete_item, parent, false);
+        } else {
             v = LayoutInflater.from(getContext()).inflate(R.layout.expression_gv_item, parent, false);
-            ViewHolder holder = new ViewHolder();
-            holder.icon = (ExpressionTextView) v.findViewById(R.id.tv_expression);
-            v.setTag(holder);
+            TextView icon = (TextView) v.findViewById(R.id.tv_expression);
+            String str = getItem(position);
+            icon.setText(str);
         }
-        String str = getItem(position);
-        ViewHolder holder = (ViewHolder) v.getTag();
-        holder.icon.setText(str);
         return v;
     }
 
-    static class ViewHolder {
-        ExpressionTextView icon;
-    }
 }

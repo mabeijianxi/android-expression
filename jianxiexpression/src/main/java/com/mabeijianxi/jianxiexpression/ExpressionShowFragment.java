@@ -30,7 +30,9 @@ public class ExpressionShowFragment extends Fragment implements ExpressionGridFr
     public static void input(EditText editText, String str) {
         ExpressionTransformEngine.input(editText, str);
     }
-
+    public static void delete(EditText editText) {
+        ExpressionTransformEngine.delete(editText);
+    }
     public static ExpressionShowFragment newInstance() {
         ExpressionShowFragment expressionShowFragment = new ExpressionShowFragment();
         return expressionShowFragment;
@@ -59,10 +61,10 @@ public class ExpressionShowFragment extends Fragment implements ExpressionGridFr
         expressionRecentsFragment = new ExpressionRecentsFragment();
 //        最近使用
         expressionInerFragments.add(expressionRecentsFragment);
-//        默认
-        expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_1, ExpressionCache.page_2, ExpressionCache.page_3}));
-//       emoji
-        expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_4, ExpressionCache.page_5, ExpressionCache.page_6,ExpressionCache.page_7}));
+//        表情一
+        expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_1, ExpressionCache.page_2, ExpressionCache.page_3,ExpressionCache.page_4, ExpressionCache.page_5}));
+//       表二
+//        expressionInerFragments.add(ExpressionInerFragment.newInstance(new String[][]{ExpressionCache.page_4, ExpressionCache.page_5}));
 //      TODO 自己拓展
         vp_expression.setOffscreenPageLimit(2);
         vp_expression.setAdapter(new ExpressionShowApadater(getChildFragmentManager(), expressionInerFragments));

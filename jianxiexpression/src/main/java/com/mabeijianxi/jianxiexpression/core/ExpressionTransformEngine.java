@@ -2,10 +2,12 @@ package com.mabeijianxi.jianxiexpression.core;
 
 import android.content.Context;
 import android.text.Spannable;
+import android.view.KeyEvent;
 import android.widget.EditText;
 
 import com.mabeijianxi.jianxiexpression.widget.ExpressionSpan;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,16 +23,22 @@ public class ExpressionTransformEngine {
     public static Spannable transformExoression(Context context, Spannable text, int emojiSize, int emojiAlignment, int textSize) {
         int textLength = text.length();
 
-        // remove spans throughout all text
+        HashMap<Integer, Integer> SpanIndex = new HashMap<>();
+
         ExpressionSpan[] oldSpans = text.getSpans(0, textLength, ExpressionSpan.class);
         for (int i = 0; i < oldSpans.length; i++) {
-            text.removeSpan(oldSpans[i]);
+            SpanIndex.put(text.getSpanStart(oldSpans[i]), text.getSpanEnd(oldSpans[i]));
         }
-//            TODO 效率不是很高，等待进一步优化
+
         String PATTERN = "\\[soon](.*?)\\[/soon]";
         Pattern p = Pattern.compile(PATTERN);
         Matcher m = p.matcher(text);
         while (m.find()) {
+
+            Integer maybeEnd = SpanIndex.get(m.start());
+            if ( maybeEnd!=null&&maybeEnd.intValue()== m.end()) {
+                continue;
+            }
 
             String beferGroup = m.group();
             Integer index = ExpressionCache.getAllExpressionTable().get(beferGroup);
@@ -72,7 +80,10 @@ public class ExpressionTransformEngine {
             editText.getText().replace(Math.min(start, end), Math.max(start, end), str, 0, str.length());
         }
     }
-
+    public static void delete(EditText editText) {
+        KeyEvent event = new KeyEvent(0, 0, 0, KeyEvent.KEYCODE_DEL, 0, 0, 0, 0, KeyEvent.KEYCODE_ENDCALL);
+        editText.dispatchKeyEvent(event);
+    }
     /**
      * 添加最近使用表情
      *

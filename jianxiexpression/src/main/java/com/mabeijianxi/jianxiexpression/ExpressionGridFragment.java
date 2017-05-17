@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
     private ExpressionClickListener mExpressionClickListener;
     private ExpressionaddRecentListener mExpressionaddRecentListener;
     private ExpressionItemAdapter expressionItemAdapter;
+    private ExpressionDeleteClickListener mExpressionDeleteClickListener;
 
     public static ExpressionGridFragment newInstance(String[] expressionName) {
         ExpressionGridFragment expressionGridFragment = new ExpressionGridFragment();
@@ -50,6 +52,12 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
         } else if (getParentFragment().getParentFragment() instanceof ExpressionaddRecentListener) {
             mExpressionaddRecentListener = (ExpressionaddRecentListener) getParentFragment().getParentFragment();
         }
+
+        if (getActivity() instanceof ExpressionDeleteClickListener) {
+            mExpressionDeleteClickListener = (ExpressionDeleteClickListener) getActivity();
+        }  else {
+            throw new IllegalArgumentException(activity + "需要实现ExpressionDeleteClickListener");
+        }
     }
 
     @Nullable
@@ -69,12 +77,22 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String itemAtPosition = (String) parent.getItemAtPosition(position);
-        mExpressionClickListener.expressionClick(itemAtPosition);
-        ExpressionTransformEngine.addRecentExpression(itemAtPosition);
-        if (mExpressionaddRecentListener != null) {
-            mExpressionaddRecentListener.expressionaddRecent(itemAtPosition);
+        if(position==20){
+            if(mExpressionDeleteClickListener!=null){
+                mExpressionDeleteClickListener.expressionDeleteClick(view);
+            }
+            return;
         }
+
+        String itemAtPosition = (String) parent.getItemAtPosition(position);
+        if (!TextUtils.isEmpty(itemAtPosition)) {
+            mExpressionClickListener.expressionClick(itemAtPosition);
+            ExpressionTransformEngine.addRecentExpression(itemAtPosition);
+            if (mExpressionaddRecentListener != null) {
+                mExpressionaddRecentListener.expressionaddRecent(itemAtPosition);
+            }
+        }
+
     }
 
     /**
@@ -100,4 +118,7 @@ public class ExpressionGridFragment extends Fragment implements AdapterView.OnIt
         void expressionaddRecent(String str);
     }
 
+    public interface ExpressionDeleteClickListener {
+        void expressionDeleteClick(View v);
+    }
 }
