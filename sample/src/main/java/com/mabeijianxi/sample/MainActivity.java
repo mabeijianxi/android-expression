@@ -192,14 +192,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /**
-     * 这里必须实现表情点击后才能把具体表情传入edittext
-     * @param str
-     */
-    @Override
-    public void expressionClick(String str) {
-        ExpressionShowFragment.input(et_send_content, str);
-    }
+
 
     @Override
     protected void onPause() {
@@ -228,6 +221,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void expressionDeleteClick(View v) {
         ExpressionShowFragment.delete(et_send_content);
+    }
+
+    /**
+     * 这里必须实现表情点击后才能把具体表情传入edittext
+     * @param str
+     */
+    @Override
+    public void expressionClick(String str) {
+        ExpressionShowFragment.input(et_send_content, str);
     }
 }
 

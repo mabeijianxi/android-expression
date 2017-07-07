@@ -46,7 +46,7 @@ public class ExpressionTransformEngine {
             if (index!=null&&index>=0) {
                 id = index;
             } else {
-                String afterGroup = beferGroup.replace("[jx]", "").replace("[/jx]", "");
+                String afterGroup = beferGroup.replaceAll("\\[jx]|\\[/jx]", "");
 
                 id = context.getResources().getIdentifier(afterGroup, "drawable", context.getPackageName());
             }
