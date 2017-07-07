@@ -8,8 +8,8 @@ android {
         applicationId "com.mabeijianxi.sample"
         minSdkVersion 11
         targetSdkVersion 22
-        versionCode 7
-        versionName "2.2.4"
+        versionCode 10
+        versionName "2.2.8"
     }
     buildTypes {
         release {

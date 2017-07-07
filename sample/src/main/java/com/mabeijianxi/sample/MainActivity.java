@@ -25,7 +25,7 @@ import com.mabeijianxi.jianxiexpression.widget.ExpressionEditText;
  * Created by jian on 2016/6/24 19:35
  * mabeijianxi@gmail.com
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, ExpressionGridFragment.ExpressionClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ExpressionGridFragment.ExpressionClickListener,ExpressionGridFragment.ExpressionDeleteClickListener {
 
     private ExpressionEditText et_send_content;
     private int supportSoftInputHeight;
@@ -223,6 +223,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         InputMethodManager imm = (InputMethodManager) context.getSystemService(context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(view, 0);
 
+    }
+
+    @Override
+    public void expressionDeleteClick(View v) {
+        ExpressionShowFragment.delete(et_send_content);
     }
 }
 

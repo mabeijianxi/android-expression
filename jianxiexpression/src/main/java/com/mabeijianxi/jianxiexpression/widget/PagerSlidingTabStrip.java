@@ -49,6 +49,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	private boolean smoothPage=true;
 
+	private float indicatorPadding=0;
+
+
 	public void setSmoothPage(boolean smoothPage) {
 		this.smoothPage = smoothPage;
 	}
@@ -394,7 +397,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 					* lineRight);
 		}
 
-		canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height,
+		canvas.drawRect(lineLeft+indicatorPadding, height - indicatorHeight, lineRight-indicatorPadding, height,
 				rectPaint);
 
 		// draw underline
@@ -463,6 +466,14 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	public void setIndicatorColorResource(int resId) {
 		this.indicatorColor = getResources().getColor(resId);
 		invalidate();
+	}
+
+	public void  setIndicatorPadding(float indicatorPadding){
+		this.indicatorPadding=indicatorPadding;
+		invalidate();
+	}
+	public float  getIndicatorPadding(){
+		return indicatorPadding;
 	}
 
 	public int getIndicatorColor() {

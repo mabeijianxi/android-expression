@@ -30,7 +30,7 @@ public class ExpressionTransformEngine {
             SpanIndex.put(text.getSpanStart(oldSpans[i]), text.getSpanEnd(oldSpans[i]));
         }
 
-        String PATTERN = "\\[soon](.*?)\\[/soon]";
+        String PATTERN = "\\[jx](.*?)\\[/jx]";
         Pattern p = Pattern.compile(PATTERN);
         Matcher m = p.matcher(text);
         while (m.find()) {
@@ -46,7 +46,7 @@ public class ExpressionTransformEngine {
             if (index!=null&&index>=0) {
                 id = index;
             } else {
-                String afterGroup = beferGroup.replace("[soon]", "").replace("[/soon]", "");
+                String afterGroup = beferGroup.replace("[jx]", "").replace("[/jx]", "");
 
                 id = context.getResources().getIdentifier(afterGroup, "drawable", context.getPackageName());
             }

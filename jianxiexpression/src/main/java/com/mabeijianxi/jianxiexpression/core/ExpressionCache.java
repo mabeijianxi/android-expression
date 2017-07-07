@@ -11,49 +11,49 @@ import java.util.HashMap;
 public class ExpressionCache {
     //    TODO 每页数据资源，可自己定义，自己更改
     public static final String[] page_1 = new String[]{
-            "[soon]aa_keai[/soon]", "[soon]ab_haha[/soon]", "[soon]ac_xixi[/soon]",
-            "[soon]ad_xiaoku[/soon]", "[soon]ae_sikao[/soon]", "[soon]af_numa[/soon]",
-            "[soon]ag_xu[/soon]", "[soon]ah_guzhang[/soon]", "[soon]ai_zuohengheng[/soon]",
-            "[soon]aj_youhengheng[/soon]", "[soon]ak_qinqin[/soon]", "[soon]al_yiwen[/soon]",
-            "[soon]am_baibai[/soon]", "[soon]an_hehe[/soon]", "[soon]ao_yinxian[/soon]",
-            "[soon]ap_haixiu[/soon]", "[soon]aq_jiyan[/soon]", "[soon]ar_dalian[/soon]",
-            "[soon]as_nu[/soon]", "[soon]at_lei[/soon]", ""
+            "[jx]aa_keai[/jx]", "[jx]ab_haha[/jx]", "[jx]ac_xixi[/jx]",
+            "[jx]ad_xiaoku[/jx]", "[jx]ae_sikao[/jx]", "[jx]af_numa[/jx]",
+            "[jx]ag_xu[/jx]", "[jx]ah_guzhang[/jx]", "[jx]ai_zuohengheng[/jx]",
+            "[jx]aj_youhengheng[/jx]", "[jx]ak_qinqin[/jx]", "[jx]al_yiwen[/jx]",
+            "[jx]am_baibai[/jx]", "[jx]an_hehe[/jx]", "[jx]ao_yinxian[/jx]",
+            "[jx]ap_haixiu[/jx]", "[jx]aq_jiyan[/jx]", "[jx]ar_dalian[/jx]",
+            "[jx]as_nu[/jx]", "[jx]at_lei[/jx]", ""
 
     };
     public static final String[] page_2 = new String[]{
-            "[soon]ba_bishi[/soon]", "[soon]bb_chanzui[/soon]", "[soon]bc_chijing[/soon]",
-            "[soon]bd_dahaqi[/soon]", "[soon]be_beishang[/soon]", "[soon]bf_bizui[/soon]",
-            "[soon]bg_ding[/soon]", "[soon]bh_ganmao[/soon]", "[soon]bi_han[/soon]",
-            "[soon]bj_aini[/soon]", "[soon]bk_heixian[/soon]", "[soon]bl_heng[/soon]",
-            "[soon]bm_huaxin[/soon]", "[soon]bn_kelian[/soon]", "[soon]bo_ku[/soon]",
-            "[soon]bp_kun[/soon]", "[soon]bq_landelini[/soon]", "[soon]br_qian[/soon]",
-            "[soon]bs_shayan[/soon]", "[soon]bt_shengbing[/soon]", ""
+            "[jx]ba_bishi[/jx]", "[jx]bb_chanzui[/jx]", "[jx]bc_chijing[/jx]",
+            "[jx]bd_dahaqi[/jx]", "[jx]be_beishang[/jx]", "[jx]bf_bizui[/jx]",
+            "[jx]bg_ding[/jx]", "[jx]bh_ganmao[/jx]", "[jx]bi_han[/jx]",
+            "[jx]bj_aini[/jx]", "[jx]bk_heixian[/jx]", "[jx]bl_heng[/jx]",
+            "[jx]bm_huaxin[/jx]", "[jx]bn_kelian[/jx]", "[jx]bo_ku[/jx]",
+            "[jx]bp_kun[/jx]", "[jx]bq_landelini[/jx]", "[jx]br_qian[/jx]",
+            "[jx]bs_shayan[/jx]", "[jx]bt_shengbing[/jx]", ""
     };
     public static final String[] page_3 = new String[]{
-            "[soon]ca_shiwang[/soon]", "[soon]cb_shuijiao[/soon]", "[soon]cc_zhuakuang[/soon]",
-            "[soon]cd_taikaixin[/soon]", "[soon]ce_touxiao[/soon]", "[soon]cf_tu[/soon]",
-            "[soon]cg_wabishi[/soon]", "[soon]ch_weiqu[/soon]", "[soon]ci_yun[/soon]",
-            "[soon]cj_shuai[/soon]", "[soon]ck_doge[/soon]", "[soon]cl_miao[/soon]",
-            "[soon]cm_xiongmao[/soon]", "[soon]cn_tuzi[/soon]", "[soon]co_zhutou[/soon]",
-            "[soon]cp_shenshou[/soon]", "[soon]cq_nanhaier[/soon]", "[soon]cr_nvhaier[/soon]",
-            "[soon]cs_feizao[/soon]", "[soon]ct_aoteman[/soon]", ""
+            "[jx]ca_shiwang[/jx]", "[jx]cb_shuijiao[/jx]", "[jx]cc_zhuakuang[/jx]",
+            "[jx]cd_taikaixin[/jx]", "[jx]ce_touxiao[/jx]", "[jx]cf_tu[/jx]",
+            "[jx]cg_wabishi[/jx]", "[jx]ch_weiqu[/jx]", "[jx]ci_yun[/jx]",
+            "[jx]cj_shuai[/jx]", "[jx]ck_doge[/jx]", "[jx]cl_miao[/jx]",
+            "[jx]cm_xiongmao[/jx]", "[jx]cn_tuzi[/jx]", "[jx]co_zhutou[/jx]",
+            "[jx]cp_shenshou[/jx]", "[jx]cq_nanhaier[/jx]", "[jx]cr_nvhaier[/jx]",
+            "[jx]cs_feizao[/jx]", "[jx]ct_aoteman[/jx]", ""
     };
     public static final String[] page_4 = new String[]{
-            "[soon]da_geili[/soon]", "[soon]db_jiong[/soon]", "[soon]dc_meng[/soon]",
-            "[soon]dd_shenma[/soon]", "[soon]de_v5[/soon]", "[soon]df_xi[/soon]",
-            "[soon]dg_zhi[/soon]", "[soon]dh_buyao[/soon]", "[soon]di_good[/soon]",
-            "[soon]dj_haha[/soon]", "[soon]dk_lai[/soon]", "[soon]dl_ok[/soon]",
-            "[soon]dm_ruo[/soon]", "[soon]dn_woshou[/soon]", "[soon]do_ye[/soon]",
-            "[soon]dp_zan[/soon]", "[soon]dq_zuoyi[/soon]", "[soon]dr_shangxin[/soon]",
-            "[soon]ds_xin[/soon]", "[soon]dt_dangao[/soon]", ""
+            "[jx]da_geili[/jx]", "[jx]db_jiong[/jx]", "[jx]dc_meng[/jx]",
+            "[jx]dd_shenma[/jx]", "[jx]de_v5[/jx]", "[jx]df_xi[/jx]",
+            "[jx]dg_zhi[/jx]", "[jx]dh_buyao[/jx]", "[jx]di_good[/jx]",
+            "[jx]dj_haha[/jx]", "[jx]dk_lai[/jx]", "[jx]dl_ok[/jx]",
+            "[jx]dm_ruo[/jx]", "[jx]dn_woshou[/jx]", "[jx]do_ye[/jx]",
+            "[jx]dp_zan[/jx]", "[jx]dq_zuoyi[/jx]", "[jx]dr_shangxin[/jx]",
+            "[jx]ds_xin[/jx]", "[jx]dt_dangao[/jx]", ""
     };
     public static final String[] page_5 = new String[]{
-            "[soon]ea_feiji[/soon]", "[soon]eb_ganbei[/soon]", "[soon]ec_huatong[/soon]",
-            "[soon]ed_lazhu[/soon]", "[soon]ee_liwu[/soon]", "[soon]ef_lvsidai[/soon]",
-            "[soon]eg_weibo[/soon]", "[soon]eh_weiguan[/soon]", "[soon]ei_yinyue[/soon]",
-            "[soon]ej_zhaoxiangji[/soon]", "[soon]ek_zhong[/soon]", "[soon]el_weifeng[/soon]",
-            "[soon]em_xianhua[/soon]", "[soon]en_taiyang[/soon]", "[soon]eo_yueliang[/soon]",
-            "[soon]ep_fuyun[/soon]", "[soon]eq_xiayu[/soon]", "[soon]er_shachenbao[/soon]",
+            "[jx]ea_feiji[/jx]", "[jx]eb_ganbei[/jx]", "[jx]ec_huatong[/jx]",
+            "[jx]ed_lazhu[/jx]", "[jx]ee_liwu[/jx]", "[jx]ef_lvsidai[/jx]",
+            "[jx]eg_weibo[/jx]", "[jx]eh_weiguan[/jx]", "[jx]ei_yinyue[/jx]",
+            "[jx]ej_zhaoxiangji[/jx]", "[jx]ek_zhong[/jx]", "[jx]el_weifeng[/jx]",
+            "[jx]em_xianhua[/jx]", "[jx]en_taiyang[/jx]", "[jx]eo_yueliang[/jx]",
+            "[jx]ep_fuyun[/jx]", "[jx]eq_xiayu[/jx]", "[jx]er_shachenbao[/jx]",
             "", "", ""
     };
 
