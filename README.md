@@ -1,5 +1,8 @@
 # android-expression
 这是一个 Android 自定义表情库
+[![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/mabeijianxi/android-expression/blob/master/LICENSE)
+[![Release Version](https://img.shields.io/badge/release-2.2.8-red.svg)](https://github.com/mabeijianxi/android-expression/releases)
+
 
 ### 效果图
 <img src="https://github.com/mabeijianxi/android-expression/blob/master/expression.gif"  alt="expression.gif" />
